@@ -1,0 +1,14 @@
+.venv/
+venv/
+env/
+.git/
+.gitignore
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.streamlit/secrets.toml
+*.md
+.DS_Store

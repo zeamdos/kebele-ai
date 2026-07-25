@@ -12,7 +12,7 @@ from typing import Any
 
 import requests
 
-from config import ADDIS_AI_API_KEY
+from config import get_setting
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ class AddisAIVoicePipeline:
     """Speech-to-text and text-to-speech helpers backed by Addis AI."""
 
     def __init__(self, api_key: str | None = None, timeout: int = REQUEST_TIMEOUT_SECONDS) -> None:
-        self.api_key = api_key if api_key is not None else ADDIS_AI_API_KEY
+        self.api_key = api_key if api_key is not None else get_setting("ADDIS_AI_API_KEY", "")
         self.timeout = timeout
 
     def _auth_headers(self) -> dict[str, str]:

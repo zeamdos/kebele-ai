@@ -8,7 +8,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
 
-from config import EXA_API_KEY
+from config import get_setting
 
 DATABASE_PATH = Path(__file__).resolve().parent / "database.json"
 LOCAL_CONFIDENCE_THRESHOLD = 0.45
@@ -24,7 +24,7 @@ class KebeleRetriever:
         use_exa_backup: bool = True,
     ) -> None:
         self.database_path = Path(database_path) if database_path else DATABASE_PATH
-        self.exa_api_key = exa_api_key if exa_api_key is not None else EXA_API_KEY
+        self.exa_api_key = exa_api_key if exa_api_key is not None else get_setting("EXA_API_KEY", "")
         self.use_exa_backup = use_exa_backup
         self.processes = self._load_database()
         self._exa = None

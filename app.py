@@ -49,16 +49,16 @@ def inject_styles() -> None:
             --et-green: #078930;
             --et-yellow: #FCDD09;
             --et-red: #DA121A;
-            --ink: #14201a;
-            --muted: #4a5a50;
-            --panel: rgba(255, 252, 246, 0.88);
-            --line: rgba(7, 137, 48, 0.18);
+            --ink: #f3f6f2;
+            --muted: #b7c4bb;
+            --panel: rgba(26, 36, 32, 0.92);
+            --line: rgba(252, 221, 9, 0.18);
           }
           .stApp {
             background:
-              radial-gradient(1200px 500px at 10% -10%, rgba(252, 221, 9, 0.28), transparent 55%),
-              radial-gradient(900px 420px at 100% 0%, rgba(218, 18, 26, 0.14), transparent 50%),
-              linear-gradient(165deg, #f7fbf7 0%, #eef6f0 42%, #f8f3e8 100%);
+              radial-gradient(1200px 500px at 10% -10%, rgba(252, 221, 9, 0.16), transparent 55%),
+              radial-gradient(900px 420px at 100% 0%, rgba(218, 18, 26, 0.18), transparent 50%),
+              linear-gradient(165deg, #0f1612 0%, #152019 46%, #1a1512 100%);
             color: var(--ink);
             font-family: "Noto Sans Ethiopic", "Syne", sans-serif;
           }
@@ -66,6 +66,7 @@ def inject_styles() -> None:
           h1, h2, h3, .brand-title {
             font-family: "Syne", "Noto Sans Ethiopic", sans-serif !important;
             letter-spacing: -0.02em;
+            color: var(--ink) !important;
           }
           .flag-bar {
             display: grid; grid-template-columns: 1fr 1fr 1fr; height: 10px;
@@ -82,7 +83,7 @@ def inject_styles() -> None:
             margin: 0; font-size: clamp(1.9rem, 4vw, 2.55rem); font-weight: 800;
             color: var(--ink); line-height: 1.1;
           }
-          .brand-am { margin: 0.45rem 0 0; font-size: 1.15rem; font-weight: 700; color: var(--et-green); }
+          .brand-am { margin: 0.45rem 0 0; font-size: 1.15rem; font-weight: 700; color: var(--et-yellow); }
           .brand-tag { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.98rem; max-width: 36rem; }
           .panel {
             background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
@@ -93,16 +94,16 @@ def inject_styles() -> None:
             padding: 0.35rem 0.75rem; border-radius: 999px; font-weight: 700;
             font-size: 0.92rem; border: 1px solid transparent; margin-top: 0.55rem;
           }
-          .badge-success { background: rgba(7,137,48,0.12); color: #056327; border-color: rgba(7,137,48,0.28); }
-          .badge-warn { background: rgba(218,18,26,0.10); color: #9e0d14; border-color: rgba(218,18,26,0.28); }
-          .badge-orange { background: rgba(196,120,12,0.14); color: #8a4b00; border-color: rgba(196,120,12,0.3); }
+          .badge-success { background: rgba(7,137,48,0.22); color: #8dffb0; border-color: rgba(7,137,48,0.45); }
+          .badge-warn { background: rgba(218,18,26,0.22); color: #ffb0b4; border-color: rgba(218,18,26,0.45); }
+          .badge-orange { background: rgba(252,221,9,0.16); color: #ffe56a; border-color: rgba(252,221,9,0.35); }
           .fallback-alert {
-            border-left: 5px solid var(--et-red); background: rgba(218,18,26,0.08);
+            border-left: 5px solid var(--et-red); background: rgba(218,18,26,0.16);
             border-radius: 14px; padding: 0.9rem 1rem; margin: 0.8rem 0 1rem;
           }
-          .fallback-alert strong { color: #9e0d14; display: block; margin-bottom: 0.25rem; }
+          .fallback-alert strong { color: #ffb0b4; display: block; margin-bottom: 0.25rem; }
           div[data-testid="stButton"] > button {
-            border-radius: 12px; border: 1px solid rgba(7,137,48,0.25); font-weight: 700;
+            border-radius: 12px; border: 1px solid rgba(252,221,9,0.28); font-weight: 700;
           }
           div[data-testid="stButton"] > button[kind="primary"] {
             background: linear-gradient(135deg, #078930, #0a6f2a); border: none;
