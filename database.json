@@ -1,0 +1,98 @@
+{
+  "processes": [
+    {
+      "id": "id_renewal",
+      "title": "የመታወቂያ እድሳት",
+      "title_en": "ID Renewal",
+      "description": "የቀበሌ/ወረዳ ነዋሪ መታወቂያ ጊዜው ሲያልቅ በአካል በመገኘት ማደስ።",
+      "keywords": [
+        "እድሳት",
+        "መታወቂያ እድሳት",
+        "የመታወቂያ እድሳት",
+        "renew",
+        "renewal",
+        "id renewal",
+        "kebele id renewal",
+        "resident id renewal",
+        "ወረዳ መታወቂያ",
+        "ቀበሌ መታወቂያ",
+        "ማደስ",
+        "መታወቂያ ማደስ",
+        "መታወቂያዬን",
+        "እፈልጋለሁ",
+        "ID Renewal"
+      ],
+      "required_documents": [
+        "አሮጌው/ጊዜው ያለፈው መታወቂያ",
+        "2 የቅርብ ጊዜ ፓስፖርት ልክ ፎቶዎች",
+        "የማመልከቻ ቅጽ (በወረዳው ቢሮ)",
+        "በአካል መገኘት (በሌላ ሰው መተካት አይቻልም)"
+      ],
+      "fee": "እንደ ወረዳ ከ 1–50 ብር (በዘግይቶ እድሳት ቅጣት ሊጨመር ይችላል)",
+      "processing_time": "1–7 የስራ ቀናት"
+    },
+    {
+      "id": "lost_id_replacement",
+      "title": "የጠፋ መታወቂያ መተካት",
+      "title_en": "Lost ID Replacement",
+      "description": "የጠፋ የቀበሌ/ወረዳ ነዋሪ መታወቂያ በፖሊስ ማረጋገጫና በወረዳ ቢሮ ማረጋገጫ ተተክቶ ይሰጣል።",
+      "keywords": [
+        "ጠፋ",
+        "የጠፋ መታወቂያ",
+        "መተካት",
+        "የጠፋ መታወቂያ መተካት",
+        "lost",
+        "lost id",
+        "replacement",
+        "lost id replacement",
+        "duplicate id",
+        "ፖሊስ ማረጋገጫ",
+        "police report",
+        "ዱፕሊኬት መታወቂያ",
+        "Lost ID",
+        "የጠፋ"
+      ],
+      "required_documents": [
+        "ከፖሊስ ጣቢያ የመጥፋት ማረጋገጫ/ሪፖርት",
+        "የቀድሞው መታወቂያ መረጃ (ቁጥር፣ ስም፣ አድራሻ)",
+        "2 የቅርብ ጊዜ ፓስፖርት ልክ ፎቶዎች",
+        "የጽሁፍ ማመልከቻ",
+        "በወረዳው የነዋሪነት ማረጋገጫ"
+      ],
+      "fee": "እንደ ወረዳ ከ 5–100 ብር",
+      "processing_time": "3–14 የስራ ቀናት"
+    },
+    {
+      "id": "address_registration",
+      "title": "የአድራሻ ምዝገባ",
+      "title_en": "Address Registration",
+      "description": "ወደ አዲስ ቀበሌ/ወረዳ ሲዛወሩ የነዋሪነት አድራሻ መመዝገብ ወይም ማሻሻል።",
+      "keywords": [
+        "አድራሻ",
+        "ምዝገባ",
+        "የአድራሻ ምዝገባ",
+        "ነዋሪነት",
+        "መዛወር",
+        "address",
+        "registration",
+        "address registration",
+        "residency",
+        "change of address",
+        "የነዋሪነት ምዝገባ",
+        "ከቀበሌ መልቀቂያ",
+        "መመዝገብ",
+        "አድራሻ መቀየር",
+        "Address Registration"
+      ],
+      "required_documents": [
+        "ከቀድሞ ቀበሌ/ወረዳ የመልቀቂያ ደብዳቤ",
+        "የአሁኑ የመኖሪያ ማረጋገጫ (የቤት ቁጥር/ኪራይ ስምምነት ወይም የባለቤት ማረጋገጫ)",
+        "2 የቅርብ ጊዜ ፓስፖርት ልክ ፎቶዎች",
+        "የማመልከቻ ቅጽ",
+        "አስፈላጊ ከሆነ የ 3 ምስክሮች ማረጋገጫ"
+      ],
+      "fee": "እንደ ወረዳ ከ 1–50 ብር",
+      "processing_time": "3–10 የስራ ቀናት"
+    }
+  ]
+}

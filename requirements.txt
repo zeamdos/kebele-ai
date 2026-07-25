@@ -1,0 +1,5 @@
+streamlit
+requests
+exa-py
+python-dotenv
+pydantic
