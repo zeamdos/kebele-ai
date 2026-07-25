@@ -8,6 +8,7 @@ from typing import Any
 
 import streamlit as st
 
+from config import get_setting
 from engine import CONFIDENCE_THRESHOLD, KebeleEngine
 from retriever import KebeleRetriever
 
@@ -116,7 +117,9 @@ def inject_styles() -> None:
 
 @st.cache_resource
 def get_engine() -> KebeleEngine:
-    return KebeleEngine(retriever=KebeleRetriever(use_exa_backup=False))
+    # Enable Exa backup automatically when EXA_API_KEY is configured.
+    use_exa = bool(get_setting("EXA_API_KEY", "").strip())
+    return KebeleEngine(retriever=KebeleRetriever(use_exa_backup=use_exa))
 
 
 def render_header() -> None:

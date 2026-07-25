@@ -9,9 +9,11 @@ from pathlib import Path
 from typing import Any
 
 from config import get_setting
+from models import ProcessResult
 
 DATABASE_PATH = Path(__file__).resolve().parent / "database.json"
-LOCAL_CONFIDENCE_THRESHOLD = 0.45
+# Prefer local answers when they are already strong enough for the engine guardrail.
+LOCAL_CONFIDENCE_THRESHOLD = 0.75
 
 
 class KebeleRetriever:
@@ -65,7 +67,7 @@ class KebeleRetriever:
                 soft_hits += self._similarity(query_norm, keyword_norm)
 
         if exact_hits:
-            keyword_score = min(1.0, 0.55 + 0.15 * exact_hits)
+            keyword_score = min(1.0, 0.6 + 0.2 * exact_hits)
         else:
             keyword_score = min(1.0, soft_hits / max(1.0, len(keywords)))
 
@@ -91,7 +93,14 @@ class KebeleRetriever:
             overlap = 0.0
 
         # Weighted blend of keyword containment, title similarity, and token overlap
-        score = (0.5 * keyword_score) + (0.3 * title_score) + (0.2 * overlap)
+        score = (0.55 * keyword_score) + (0.25 * title_score) + (0.2 * overlap)
+
+        # Strong boost when multiple distinctive service tokens are present.
+        if exact_hits >= 2 or overlap >= 0.66:
+            score = max(score, 0.82)
+        if exact_hits >= 1 and overlap >= 0.5:
+            score = max(score, 0.76)
+
         return round(min(1.0, score), 4)
 
     def _format_local_result(
@@ -99,28 +108,28 @@ class KebeleRetriever:
         process: dict[str, Any],
         confidence: float,
     ) -> dict[str, Any]:
-        return {
-            "status": "success",
-            "confidence": confidence,
-            "title": process.get("title", ""),
-            "requirements": list(process.get("required_documents", [])),
-            "estimated_time": process.get("processing_time", ""),
-            "fee": process.get("fee", ""),
-            "source": "local",
-            "process_id": process.get("id", ""),
-            "title_en": process.get("title_en", ""),
-        }
+        return ProcessResult(
+            status="success",
+            confidence=confidence,
+            title=process.get("title", ""),
+            requirements=list(process.get("required_documents", [])),
+            estimated_time=process.get("processing_time", ""),
+            fee=process.get("fee", ""),
+            source="local",
+            process_id=process.get("id", ""),
+            title_en=process.get("title_en", ""),
+        ).as_dict()
 
     def _empty_result(self, confidence: float = 0.0, status: str = "not_found") -> dict[str, Any]:
-        return {
-            "status": status,
-            "confidence": confidence,
-            "title": "",
-            "requirements": [],
-            "estimated_time": "",
-            "fee": "",
-            "source": "none",
-        }
+        return ProcessResult(
+            status=status,
+            confidence=confidence,
+            title="",
+            requirements=[],
+            estimated_time="",
+            fee="",
+            source="none",
+        ).as_dict()
 
     def search_local(self, query: str) -> dict[str, Any]:
         """Perform keyword and similarity matching against database.json."""
@@ -196,24 +205,26 @@ class KebeleRetriever:
         text = getattr(top, "text", "") or ""
         snippet = " ".join(text.split())[:500]
 
-        # Confidence from Exa ranking position and content availability
-        confidence = 0.55 if snippet else 0.4
+        # Confidence from Exa ranking position and content availability.
+        confidence = 0.7 if snippet else 0.5
         if len(results) >= 2:
             confidence += 0.1
-        confidence = min(0.75, confidence)
+        if getattr(top, "url", ""):
+            confidence += 0.05
+        confidence = min(0.9, confidence)
 
         requirements = [snippet] if snippet else [fallback_req]
 
-        return {
-            "status": "success",
-            "confidence": round(confidence, 4),
-            "title": title,
-            "requirements": requirements,
-            "estimated_time": verify_msg,
-            "fee": verify_msg,
-            "source": "exa",
-            "url": getattr(top, "url", ""),
-        }
+        return ProcessResult(
+            status="success",
+            confidence=round(confidence, 4),
+            title=title,
+            requirements=requirements,
+            estimated_time=verify_msg,
+            fee=verify_msg,
+            source="exa",
+            url=getattr(top, "url", "") or "",
+        ).as_dict()
 
     def retrieve(self, query: str) -> dict[str, Any]:
         """

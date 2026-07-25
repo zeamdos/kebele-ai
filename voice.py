@@ -23,9 +23,7 @@ DEFAULT_LANGUAGE = "am"
 REQUEST_TIMEOUT_SECONDS = 60
 
 # Safe fallback used when the API key is missing/invalid or the STT request fails.
-MOCK_TRANSCRIPTION = (
-    "\u1218\u1273\u12c8\u1242\u12eb\u12ec\u1295 \u121b\u12f0\u1235 \u12a5\u1348\u120d\u130b\u1208\u1201"
-)
+MOCK_TRANSCRIPTION = "\u1218\u1273\u12c8\u1242\u12eb \u121b\u12f0\u1235"
 
 
 class AddisAIVoicePipeline:

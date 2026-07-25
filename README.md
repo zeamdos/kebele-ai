@@ -74,6 +74,20 @@ The container runs:
 streamlit run app.py --server.port=8501 --server.address=0.0.0.0
 ```
 
+## Project structure
+
+| File | Role |
+| --- | --- |
+| `app.py` | Streamlit frontend |
+| `engine.py` | Orchestration + anti-sycophancy guardrail (`0.75`) |
+| `retriever.py` | Local JSON matching + optional Exa backup |
+| `voice.py` | Addis AI Amharic STT/TTS |
+| `database.json` | Verified kebele processes (Amharic) |
+| `config.py` | Env + Streamlit Secrets loader |
+| `models.py` | Pydantic response models |
+| `Dockerfile` | Render/Docker deploy image (`8501`) |
+| `.streamlit/config.toml` | Dark theme, telemetry off |
+
 ## App features
 
 - Quick Test buttons: ID Renewal, Lost ID, Vague Query
@@ -81,3 +95,4 @@ streamlit run app.py --server.port=8501 --server.address=0.0.0.0
 - Confidence badge + verified Amharic checklist
 - Anti-sycophancy fallback when confidence &lt; 0.75
 - Optional Addis AI spoken response playback
+- Optional Exa search backup for official `.gov.et` sources
