@@ -27,3 +27,13 @@ cp .env.example .env
 ## Configuration
 
 `config.py` loads values from `.env` via `python-dotenv`, with fallback defaults when variables are unset.
+
+## Run the app
+
+```bash
+source .venv/bin/activate
+streamlit run app.py
+```
+
+Quick Test buttons exercise verified and anti-sycophancy paths without audio.
+
