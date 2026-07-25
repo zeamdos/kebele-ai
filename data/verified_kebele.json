@@ -1,0 +1,253 @@
+{
+  "version": "1.0.0",
+  "locale": "am-ET",
+  "source": "verified_kebele_requirements",
+  "disclaimer_am": "ይህ መረጃ ከተረጋገጠ የቀበሌ መስፈርት መረጃ ብቻ የተወሰደ ነው። ግምት አይሰጥም።",
+  "services": [
+    {
+      "id": "id_card_renewal",
+      "category": "መታወቂያ",
+      "title_am": "የቀበሌ መታወቂያ ማደስ",
+      "title_en": "Kebele ID card renewal",
+      "aliases_am": [
+        "መታወቂያ",
+        "አይዲ ካርድ",
+        "መታወቂያ ማደስ",
+        "መታወቂያ ማውጣት",
+        "የቀበሌ መታወቂያ",
+        "ኪድ",
+        "ኬይዲ"
+      ],
+      "aliases_en": [
+        "id card",
+        "kebele id",
+        "national id renewal",
+        "identity card"
+      ],
+      "requirements_am": [
+        "የቅድሞ የቀበሌ መታወቂያ (ካለ)",
+        "ሁለት የፓስፖርት መጠን ፎቶግራፎች",
+        "የመኖሪያ ማረጋገጫ (ከአካባቢ አስተዳዳሪ ወይም ከቀበሌ)",
+        "የትውልድ ምስክር ወረቀት ወይም ሌላ ዋና ማረጋገጫ ሰነድ"
+      ],
+      "steps_am": [
+        "ወደ ቀበሌ አስተዳደር ቢሮ ይሂዱ",
+        "መታወቂያ ማደስ ቅጽ ይሙሉ",
+        "አስፈላጊ ሰነዶችን ያስረክቡ",
+        "ክፍያ ካስፈለገ ይፈጽሙና ደረሰኝ ይያዙ",
+        "በተጠቀሰው ቀን መታወቂያዎን ይቀበሉ"
+      ],
+      "office_am": "የቀበሌ አስተዳደር — የመታወቂያ ክፍል",
+      "notes_am": "የፎቶ መጠን እና ክፍያ በቀበሌ ሊለያይ ይችላል። ትክክለኛ ክፍያን በቢሮው ያረጋግጡ።"
+    },
+    {
+      "id": "residence_certificate",
+      "category": "የመኖሪያ ማረጋገጫ",
+      "title_am": "የመኖሪያ ማረጋገጫ ደብዳቤ",
+      "title_en": "Proof of residence letter",
+      "aliases_am": [
+        "የመኖሪያ ማረጋገጫ",
+        "መኖሪያ ደብዳቤ",
+        "የመኖሪያ ደብዳቤ",
+        "ሪሲደንስ",
+        "የመኖሪያ ምስክር"
+      ],
+      "aliases_en": [
+        "residence letter",
+        "proof of residence",
+        "address confirmation"
+      ],
+      "requirements_am": [
+        "የቀበሌ መታወቂያ",
+        "የቤት ኪራይ ውል ወይም የባለቤትነት ማረጋገጫ",
+        "ከጎረቤት ወይም ከአካባቢ አስተዳዳሪ የተሰጠ ማረጋገጫ (እንደ ቀበሌ መስፈርት)"
+      ],
+      "steps_am": [
+        "ወደ ቀበሌ አስተዳደር ይሂዱ",
+        "የመኖሪያ ማረጋገጫ ጥያቄ ያቅርቡ",
+        "ሰነዶችን ያስረክቡ",
+        "ደብዳቤውን ይቀበሉ"
+      ],
+      "office_am": "የቀበሌ አስተዳደር — የአገልግሎት ክፍል",
+      "notes_am": "አንዳንድ ቀበሌዎች ተጨማሪ የአካባቢ ማረጋገጫ ሊጠይቁ ይችላሉ።"
+    },
+    {
+      "id": "marriage_certificate",
+      "category": "የትዳር ምስክር",
+      "title_am": "የትዳር ምስክር ወረቀት",
+      "title_en": "Marriage certificate",
+      "aliases_am": [
+        "የትዳር ምስክር",
+        "ጋብቻ ምስክር",
+        "የጋብቻ ወረቀት",
+        "ማሬጅ ሰርቲፊኬት",
+        "ትዳር ማስመዝገብ"
+      ],
+      "aliases_en": [
+        "marriage certificate",
+        "marriage registration"
+      ],
+      "requirements_am": [
+        "የሁለቱም ወገኖች መታወቂያ",
+        "የትውልድ ምስክር ወረቀቶች",
+        "ሁለት ምስክሮች ከመታወቂያቸው ጋር",
+        "የቅድሞ ጋብቻ ካለ የፍቺ ወይም የሞት ምስክር ወረቀት"
+      ],
+      "steps_am": [
+        "ወደ ሲቪል ምዝገባ / ቀበሌ የትዳር ምዝገባ ክፍል ይሂዱ",
+        "ቅጾችን ይሙሉ",
+        "ምስክሮችን ያስገቡ",
+        "ምዝገባውን ያጠናቅቁና ምስክር ወረቀቱን ይቀበሉ"
+      ],
+      "office_am": "ሲቪል ምዝገባ / የቀበሌ የትዳር ምዝገባ",
+      "notes_am": "የሃይማኖታዊ ጋብቻ ከሲቪል ምዝገባ የተለየ ሊሆን ይችላል።"
+    },
+    {
+      "id": "birth_certificate",
+      "category": "የትውልድ ምስክር",
+      "title_am": "የትውልድ ምስክር ወረቀት",
+      "title_en": "Birth certificate",
+      "aliases_am": [
+        "የትውልድ ምስክር",
+        "ብርት ሰርቲፊኬት",
+        "የልደት ምስክር",
+        "የትውልድ ወረቀት"
+      ],
+      "aliases_en": [
+        "birth certificate",
+        "birth registration"
+      ],
+      "requirements_am": [
+        "የወላጆች መታወቂያ",
+        "ከሆስፒታል/ክሊኒክ የተሰጠ የልደት ማሳወቂያ (ካለ)",
+        "ሁለት ምስክሮች (እንደ ቀበሌ መስፈርት)",
+        "የመኖሪያ ማረጋገጫ"
+      ],
+      "steps_am": [
+        "ወደ ሲቪል ምዝገባ ቢሮ ይሂዱ",
+        "የትውልድ ምዝገባ ቅጽ ይሙሉ",
+        "ሰነዶችን ያስረክቡ",
+        "ምስክር ወረቀቱን ይቀበሉ"
+      ],
+      "office_am": "ሲቪል ምዝገባ",
+      "notes_am": "የዘገየ ምዝገባ ተጨማሪ ማረጋገጫ ሊጠይቅ ይችላል።"
+    },
+    {
+      "id": "death_certificate",
+      "category": "የሞት ምስክር",
+      "title_am": "የሞት ምስክር ወረቀት",
+      "title_en": "Death certificate",
+      "aliases_am": [
+        "የሞት ምስክር",
+        "ዴዝ ሰርቲፊኬት",
+        "የሞት ወረቀት"
+      ],
+      "aliases_en": [
+        "death certificate",
+        "death registration"
+      ],
+      "requirements_am": [
+        "የጠያቂው መታወቂያ",
+        "ከሆስፒታል/ክሊኒክ የተሰጠ የሞት ማሳወቂያ (ካለ)",
+        "የሟቹ መታወቂያ ወይም ሌላ ማረጋገጫ",
+        "ሁለት ምስክሮች (እንደ ቀበሌ መስፈርት)"
+      ],
+      "steps_am": [
+        "ወደ ሲቪል ምዝገባ ይሂዱ",
+        "የሞት ምዝገባ ቅጽ ይሙሉ",
+        "ሰነዶችን ያስረክቡ",
+        "ምስክር ወረቀቱን ይቀበሉ"
+      ],
+      "office_am": "ሲቪል ምዝገባ",
+      "notes_am": "ይህ አገልግሎት ለቅርብ ዘመድ ወይም ህጋዊ ተወካይ ብቻ ሊሰጥ ይችላል።"
+    },
+    {
+      "id": "unemployment_letter",
+      "category": "የስራ አጥነት ማረጋገጫ",
+      "title_am": "የስራ አጥነት ማረጋገጫ ደብዳቤ",
+      "title_en": "Unemployment / job-seeker letter",
+      "aliases_am": [
+        "የስራ አጥነት",
+        "ስራ አጥ ደብዳቤ",
+        "የስራ ፈላጊ ደብዳቤ",
+        "አንኤምፕሎይመንት"
+      ],
+      "aliases_en": [
+        "unemployment letter",
+        "job seeker letter"
+      ],
+      "requirements_am": [
+        "የቀበሌ መታወቂያ",
+        "የመኖሪያ ማረጋገጫ",
+        "የስራ ታሪክ ማብራሪያ (እንደ ቀበሌ መስፈርት)"
+      ],
+      "steps_am": [
+        "ወደ ቀበሌ አስተዳደር ይሂዱ",
+        "የስራ አጥነት ማረጋገጫ ጥያቄ ያቅርቡ",
+        "ሰነዶችን ያስረክቡ",
+        "ደብዳቤውን ይቀበሉ"
+      ],
+      "office_am": "የቀበሌ አስተዳደር",
+      "notes_am": "ደብዳቤው ለተወሰነ ጊዘ ብቻ ሊሆን ይችላል።"
+    },
+    {
+      "id": "clearance_letter",
+      "category": "ክሊራንስ",
+      "title_am": "የቀበሌ ክሊራንስ ደብዳቤ",
+      "title_en": "Kebele clearance letter",
+      "aliases_am": [
+        "ክሊራንስ",
+        "ክሊራንስ ደብዳቤ",
+        "የቀበሌ ክሊራንስ",
+        "ማረጋገጫ ክሊራንስ"
+      ],
+      "aliases_en": [
+        "clearance",
+        "kebele clearance",
+        "police clearance kebele"
+      ],
+      "requirements_am": [
+        "የቀበሌ መታወቂያ",
+        "የመኖሪያ ማረጋገጫ",
+        "ለምን እንደሚያስፈልግ የሚያሳይ ደብዳቤ/ማመልከቻ (እንደ አገልግሎት ዓይነት)"
+      ],
+      "steps_am": [
+        "ወደ ቀበሌ አስተዳደር ይሂዱ",
+        "ክሊራንስ ጥያቄ ያቅርቡ",
+        "ሰነዶችን ያስረክቡ",
+        "ደብዳቤውን ይቀበሉ"
+      ],
+      "office_am": "የቀበሌ አስተዳደር",
+      "notes_am": "አንዳንድ ጉዳዮች ተጨማሪ የፖሊስ ወይም የፍርድ ቤት ማረጋገጫ ሊጠይቁ ይችላሉ።"
+    },
+    {
+      "id": "family_support_letter",
+      "category": "የቤተሰብ ድጋፍ",
+      "title_am": "የቤተሰብ ድጋፍ / ጥገኝነት ደብዳቤ",
+      "title_en": "Family support / dependency letter",
+      "aliases_am": [
+        "የቤተሰብ ድጋፍ",
+        "ጥገኝነት ደብዳቤ",
+        "ዲፐንደንሲ",
+        "የቤተሰብ ደብዳቤ"
+      ],
+      "aliases_en": [
+        "family support letter",
+        "dependency letter"
+      ],
+      "requirements_am": [
+        "የጠያቂው መታወቂያ",
+        "የቤተሰብ አባላት መታወቂያ ወይም የትውልድ ምስክር",
+        "የመኖሪያ ማረጋገጫ"
+      ],
+      "steps_am": [
+        "ወደ ቀበሌ አስተዳደር ይሂዱ",
+        "የቤተሰብ ድጋፍ ደብዳቤ ጥያቄ ያቅርቡ",
+        "ሰነዶችን ያስረክቡ",
+        "ደብዳቤውን ይቀበሉ"
+      ],
+      "office_am": "የቀበሌ አስተዳደር",
+      "notes_am": "የቤተሰብ ግንኙነት በግልጽ መረጋገጥ አለበት።"
+    }
+  ]
+}

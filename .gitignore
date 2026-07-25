@@ -1,0 +1,13 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.streamlit/secrets.toml
+tmp/
+*.mp3
+*.wav
+!assets/.gitkeep
+.DS_Store
