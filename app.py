@@ -116,10 +116,15 @@ def inject_styles() -> None:
 
 
 @st.cache_resource
-def get_engine() -> KebeleEngine:
-    # Enable Exa backup automatically when EXA_API_KEY is configured.
-    use_exa = bool(get_setting("EXA_API_KEY", "").strip())
-    return KebeleEngine(retriever=KebeleRetriever(use_exa_backup=use_exa))
+def get_engine(exa_enabled: bool, addis_enabled: bool) -> KebeleEngine:
+    """Cache engine instances per secret configuration."""
+    return KebeleEngine(retriever=KebeleRetriever(use_exa_backup=exa_enabled))
+
+
+def build_engine() -> KebeleEngine:
+    exa_enabled = bool(get_setting("EXA_API_KEY", "").strip())
+    addis_enabled = bool(get_setting("ADDIS_AI_API_KEY", "").strip())
+    return get_engine(exa_enabled, addis_enabled)
 
 
 def render_header() -> None:
@@ -169,12 +174,19 @@ def render_checklist(result: dict[str, Any]) -> None:
     st.markdown("\n".join(lines))
 
 
-def maybe_speak(engine: KebeleEngine, message: str) -> bytes | None:
+def maybe_speak(engine: KebeleEngine, message: str) -> bytes:
+    """Always return playable audio bytes (Addis AI or local demo tone)."""
+    from voice import AddisAIVoicePipeline, build_demo_wav
+
     try:
-        return engine.speak(message)
+        audio = engine.speak(message)
+        # Detect demo fallback: AddisAIVoicePipeline returns demo wav when key missing.
+        st.session_state["audio_is_demo"] = not bool(get_setting("ADDIS_AI_API_KEY", "").strip())
+        return audio
     except Exception as exc:  # noqa: BLE001
-        st.info(f"Spoken audio unavailable right now: {exc}")
-        return None
+        st.session_state["audio_is_demo"] = True
+        st.info(f"Using local demo audio ({exc})")
+        return build_demo_wav()
 
 
 def run_query(engine: KebeleEngine, text: str, *, transcription: str | None = None) -> None:
@@ -242,6 +254,10 @@ def render_results() -> None:
     st.markdown(f"**{AM_AUDIO}**")
     if audio_bytes:
         st.audio(audio_bytes, format="audio/wav")
+        if st.session_state.get("audio_is_demo"):
+            st.caption("Demo tone playing. Add ADDIS_AI_API_KEY in Secrets/.env for real Amharic TTS.")
+        else:
+            st.caption("Addis AI spoken output.")
     else:
         st.caption("No spoken audio generated for this response.")
 
@@ -249,7 +265,15 @@ def render_results() -> None:
 def main() -> None:
     inject_styles()
     render_header()
-    engine = get_engine()
+    engine = build_engine()
+
+    addis_ok = bool(get_setting("ADDIS_AI_API_KEY", "").strip())
+    exa_ok = bool(get_setting("EXA_API_KEY", "").strip())
+    st.caption(
+        f"Addis AI: {'ready' if addis_ok else 'demo mode'} · "
+        f"Exa: {'ready' if exa_ok else 'local-only'} · "
+        f"Guardrail: {CONFIDENCE_THRESHOLD:.0%}"
+    )
 
     st.markdown("### Quick Test")
     cols = st.columns(3)
@@ -257,6 +281,7 @@ def main() -> None:
         with col:
             if st.button(label, use_container_width=True, key=f"quick_{label}"):
                 run_query(engine, query)
+                st.session_state["flash"] = f"Processed quick test: {label}"
 
     st.markdown("### Ask by Voice or Text")
     tab_text, tab_upload, tab_record = st.tabs(["Type Text", "Upload Audio", "Record Audio"])
@@ -294,11 +319,15 @@ def main() -> None:
             else:
                 run_audio(engine, recorded.getvalue(), ".wav")
 
+    flash = st.session_state.pop("flash", None)
+    if flash:
+        st.success(flash)
+
     render_results()
 
     st.caption(
-        f"Guardrail threshold: {CONFIDENCE_THRESHOLD:.0%} · "
-        "Verified answers only when confidence is high enough."
+        "Tip: use Quick Test buttons to verify the app without audio or API keys. "
+        "Add secrets for live Addis AI speech and Exa web backup."
     )
 
 

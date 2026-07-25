@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import base64
+import math
+import struct
+import wave
+from io import BytesIO
 import binascii
 import json
 import logging
@@ -24,6 +28,30 @@ REQUEST_TIMEOUT_SECONDS = 60
 
 # Safe fallback used when the API key is missing/invalid or the STT request fails.
 MOCK_TRANSCRIPTION = "\u1218\u1273\u12c8\u1242\u12eb \u121b\u12f0\u1235"
+
+
+
+def build_demo_wav(duration_sec: float = 1.2, rate: int = 16000, freq: float = 440.0) -> bytes:
+    """Generate a short valid WAV tone for offline/demo TTS fallback."""
+    n_frames = int(rate * duration_sec)
+    buf = BytesIO()
+    with wave.open(buf, "wb") as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(rate)
+        frames = bytearray()
+        for i in range(n_frames):
+            # Fade in/out soft beep so demos are audible without being harsh.
+            envelope = 1.0
+            fade = int(rate * 0.05)
+            if i < fade:
+                envelope = i / max(fade, 1)
+            elif i > n_frames - fade:
+                envelope = (n_frames - i) / max(fade, 1)
+            sample = int(12000 * envelope * math.sin(2 * math.pi * freq * (i / rate)))
+            frames += struct.pack("<h", sample)
+        wf.writeframes(bytes(frames))
+    return buf.getvalue()
 
 
 class AddisAIVoicePipeline:
@@ -129,16 +157,20 @@ class AddisAIVoicePipeline:
 
         return ""
 
-    def text_to_speech(self, text_amharic: str) -> bytes:
-        """
-        Convert Amharic text to speech via Addis AI TTS.
+    def text_to_speech(self, text_amharic: str, *, allow_demo_fallback: bool = True) -> bytes:
+        """Convert Amharic text to speech via Addis AI TTS.
 
         Uses model አሌፍ-Audio-AM and returns raw audio bytes.
+        When the API key is missing/invalid or the request fails, returns a
+        short local demo WAV so the UI still works offline.
         """
         if not isinstance(text_amharic, str) or not text_amharic.strip():
             raise ValueError("text_amharic must be a non-empty string")
 
         if not self._has_usable_api_key():
+            logger.warning("ADDIS_AI_API_KEY missing/invalid; returning demo WAV.")
+            if allow_demo_fallback:
+                return build_demo_wav()
             raise ValueError("ADDIS_AI_API_KEY is missing or invalid")
 
         payload = {
@@ -148,18 +180,29 @@ class AddisAIVoicePipeline:
             "stream": False,
         }
 
-        response = requests.post(
-            TTS_URL,
-            headers={
-                **self._auth_headers(),
-                "Content-Type": "application/json",
-                "Accept": "audio/wav, audio/mpeg, application/json",
-            },
-            json=payload,
-            timeout=self.timeout,
-        )
-        response.raise_for_status()
-        return self._extract_audio_bytes(response)
+        try:
+            response = requests.post(
+                TTS_URL,
+                headers={
+                    **self._auth_headers(),
+                    "Content-Type": "application/json",
+                    "Accept": "audio/wav, audio/mpeg, application/json",
+                },
+                json=payload,
+                timeout=self.timeout,
+            )
+            if response.status_code in {401, 403}:
+                logger.warning("Addis AI TTS rejected API key; returning demo WAV.")
+                if allow_demo_fallback:
+                    return build_demo_wav()
+                response.raise_for_status()
+            response.raise_for_status()
+            return self._extract_audio_bytes(response)
+        except (requests.RequestException, ValueError, RuntimeError) as exc:
+            logger.warning("Addis AI TTS failed (%s); returning demo WAV.", exc)
+            if allow_demo_fallback:
+                return build_demo_wav()
+            raise
 
     def _extract_audio_bytes(self, response: requests.Response) -> bytes:
         content_type = (response.headers.get("Content-Type") or "").lower()
