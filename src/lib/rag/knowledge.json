@@ -1,0 +1,98 @@
+[
+  {
+    "id": "kb_id_renewal_docs",
+    "serviceId": "id_renewal",
+    "title": "ID renewal required documents",
+    "titleAm": "የመታወቂያ ማደሻ የሚያስፈልጉ ሰነዶች",
+    "body": "For national ID renewal bring: current/expired ID, residence confirmation, two passport photos, and the kebele application form. Fees vary by woreda.",
+    "bodyAm": "የብሄራዊ መታወቂያ ለማደስ ያስፈልጋሉ፦ የቆየ/ያበቃ መታወቂያ፣ የመኖሪያ ማረጋገጫ፣ ሁለት የፋስፖርት ፎቶዎች፣ እና የኬቤሌ ማመልከቻ ቅጽ። ክፍያ በወረዳ ሊለያይ ይችላል።",
+    "tags": [
+      "id",
+      "renewal",
+      "documents",
+      "መታወቂያ",
+      "ማደስ"
+    ]
+  },
+  {
+    "id": "kb_id_renewal_steps",
+    "serviceId": "id_renewal",
+    "title": "ID renewal steps",
+    "titleAm": "የመታወቂያ ማደሻ ደረጃዎች",
+    "body": "1) Get the form from kebele or fill at home. 2) Attach documents. 3) Pay the fee at the cashier. 4) Submit and collect the receipt. 5) Return on the given date for the renewed ID.",
+    "bodyAm": "፩) ቅጹን ከኬቤሌ ይውሰዱ ወይም በቤት ይሙሉ። ፪) ሰነዶችን ያያይዙ። ፫) ክፍያውን በገንዘብ ተቀባይ ይክፈሉ። ፬) ያስረክቡና ደረሰኝ ይቀበሉ። ፭) በተሰጠው ቀን የታደሰውን መታወቂያ ይውሰዱ።",
+    "tags": [
+      "id",
+      "renewal",
+      "steps",
+      "ደረጃ"
+    ]
+  },
+  {
+    "id": "kb_residence_cert",
+    "serviceId": "residence_certificate",
+    "title": "Residence certificate",
+    "titleAm": "የመኖሪያ ማረጋገጫ",
+    "body": "To get a residence certificate, bring your ID, proof of address (lease or owner letter), and fill the kebele residence form. Typically issued same day if queue allows.",
+    "bodyAm": "የመኖሪያ ማረጋገጫ ለማግኘት መታወቂያዎን፣ የአድራሻ ማስረጃ (ኪራይ ውል ወይም የባለቤት ደብዳቤ)፣ እና የመኖሪያ ቅጽ ያስፈልጋል። ወረፋ ካልበዛ ብዙ ጊዜ በዚያኑ ቀን ይሰጣል።",
+    "tags": [
+      "residence",
+      "certificate",
+      "መኖሪያ",
+      "ማረጋገጫ"
+    ]
+  },
+  {
+    "id": "kb_birth_cert",
+    "serviceId": "birth_certificate_request",
+    "title": "Birth certificate request",
+    "titleAm": "የልደት ምስክር ወረቀት ጥያቄ",
+    "body": "Bring parents' IDs when available, hospital/birth notification if any, and two witnesses from the kebele. Fill the birth registration request form.",
+    "bodyAm": "የወላጆች መታወቂያ (ካለ)፣ የሆስፒታል/ልደት ማስታወቂያ (ካለ)፣ እና ከኬቤሌ ሁለት ምስክሮች ያስፈልጋሉ። የልደት ምዝገባ ማመልከቻ ቅጹን ይሙሉ።",
+    "tags": [
+      "birth",
+      "certificate",
+      "ልደት"
+    ]
+  },
+  {
+    "id": "kb_name_correction",
+    "serviceId": "name_correction",
+    "title": "Name correction on ID",
+    "titleAm": "በመታወቂያ ላይ ስም ማስተካከል",
+    "body": "Submit a name correction request with supporting evidence (birth record, school record, or court letter when required), current ID, and photos.",
+    "bodyAm": "ስም ማስተካከያ ጥያቄ ከማስረጃ ጋር ያቅርቡ ( የልደት መዝገብ፣ የትምህርት መዝገብ፣ ወይም አስፈላጊ ከሆነ የፍርድ ቤት ደብዳቤ )፣ አሁን ያለ መታወቂያ፣ እና ፎቶዎች።",
+    "tags": [
+      "name",
+      "correction",
+      "ስም",
+      "ማስተካከያ"
+    ]
+  },
+  {
+    "id": "kb_marriage_cert",
+    "serviceId": "marriage_certificate_request",
+    "title": "Marriage certificate",
+    "titleAm": "የጋብቻ ምስክር ወረቀት",
+    "body": "Both spouses bring IDs, residence proofs, photos, and witnesses. Fill the marriage registration form at the kebele civil status desk.",
+    "bodyAm": "ሁለቱም ባለትዳሮች መታወቂያ፣ የመኖሪያ ማረጋገጫ፣ ፎቶ እና ምስክሮች ያምጡ። የጋብቻ ምዝገባ ቅጹን በኬቤሌ የሲቪል ሁኔታ ጠረጤዛ ይሙሉ።",
+    "tags": [
+      "marriage",
+      "certificate",
+      "ጋብቻ"
+    ]
+  },
+  {
+    "id": "kb_general_fees",
+    "serviceId": "general",
+    "title": "Fees vary by kebele",
+    "titleAm": "ክፍያ በኬቤሌ ሊለያይ ይችላል",
+    "body": "Official fees are set locally. Always confirm the posted fee board at your kebele cashier before paying anyone outside the office.",
+    "bodyAm": "ይፋዊ ክፍያ በአካባቢው ይወሰናል። ለማንኛውም ውጭ ሰው ከመክፈልዎ በፊት በኬቤሌው የገንዘብ ተቀባይ ላይ የተለጠፈውን የክፍያ ሰሌዳ ያረጋግጡ።",
+    "tags": [
+      "fees",
+      "ክፍያ",
+      "general"
+    ]
+  }
+]

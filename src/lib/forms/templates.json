@@ -1,0 +1,359 @@
+[
+  {
+    "id": "id_renewal",
+    "titleAm": "የመታወቂያ ማደሻ ቅጽ",
+    "titleEn": "ID Renewal Form",
+    "descriptionAm": "የብሄራዊ መታወቂያ ለማደስ የሚሞላ ቅጽ — በቤት ይሙሉ፣ ያትሙ፣ ወደ ኬቤሌ ይውሰዱ።",
+    "kebeleOfficeHintAm": "የኬቤሌ የመታወቂያ ጠረጤዛ",
+    "priceBirr": 75,
+    "fields": [
+      {
+        "key": "fullName",
+        "labelAm": "ሙሉ ስም",
+        "labelEn": "Full name",
+        "helpAm": "እንደ መታወቂያዎ ላይ የተጻፈውን ሙሉ ስም ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "fullName"
+      },
+      {
+        "key": "dateOfBirth",
+        "labelAm": "የትውልድ ቀን",
+        "labelEn": "Date of birth",
+        "helpAm": "የትውልድ ቀንዎን በዓመት-ወር-ቀን ይጻፉ።",
+        "type": "date",
+        "required": true,
+        "autofillFrom": "dateOfBirth"
+      },
+      {
+        "key": "sex",
+        "labelAm": "ጾታ",
+        "labelEn": "Sex",
+        "helpAm": "ጾታዎን ይምረጡ።",
+        "type": "select",
+        "required": true,
+        "options": [
+          {
+            "value": "male",
+            "labelAm": "ወንድ"
+          },
+          {
+            "value": "female",
+            "labelAm": "ሴት"
+          }
+        ],
+        "autofillFrom": "sex"
+      },
+      {
+        "key": "idNumber",
+        "labelAm": "የመታወቂያ ቁጥር",
+        "labelEn": "ID number",
+        "helpAm": "አሁን ያለውን ወይም ያበቃውን የመታወቂያ ቁጥር ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "idNumber"
+      },
+      {
+        "key": "kebele",
+        "labelAm": "ኬቤሌ",
+        "labelEn": "Kebele",
+        "helpAm": "የሚኖሩበትን ኬቤሌ ቁጥር/ስም ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "kebele"
+      },
+      {
+        "key": "woreda",
+        "labelAm": "ወረዳ",
+        "labelEn": "Woreda",
+        "helpAm": "የሚኖሩበትን ወረዳ ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "woreda"
+      },
+      {
+        "key": "phone",
+        "labelAm": "ስልክ ቁጥር",
+        "labelEn": "Phone",
+        "helpAm": "ሊደውሉልዎ የሚችሉበት ስልክ ቁጥር።",
+        "type": "phone",
+        "required": true
+      },
+      {
+        "key": "reason",
+        "labelAm": "የማደስ ምክንያት",
+        "labelEn": "Reason",
+        "helpAm": "ለምሳሌ፦ ጊዜው አልፏል / ጠፍቷል / ተበላሽቷል።",
+        "type": "textarea",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "residence_certificate",
+    "titleAm": "የመኖሪያ ማረጋገጫ ቅጽ",
+    "titleEn": "Residence Certificate Form",
+    "descriptionAm": "የመኖሪያ ማረጋገጫ ለመጠየቅ የሚሞላ ቅጽ።",
+    "kebeleOfficeHintAm": "የኬቤሌ አስተዳደር ጠረጤዛ",
+    "priceBirr": 50,
+    "fields": [
+      {
+        "key": "fullName",
+        "labelAm": "ሙሉ ስም",
+        "labelEn": "Full name",
+        "helpAm": "ሙሉ ስምዎን ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "fullName"
+      },
+      {
+        "key": "idNumber",
+        "labelAm": "የመታወቂያ ቁጥር",
+        "labelEn": "ID number",
+        "helpAm": "መታወቂያ ቁጥርዎን ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "idNumber"
+      },
+      {
+        "key": "kebele",
+        "labelAm": "ኬቤሌ",
+        "labelEn": "Kebele",
+        "helpAm": "ኬቤሌዎን ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "kebele"
+      },
+      {
+        "key": "woreda",
+        "labelAm": "ወረዳ",
+        "labelEn": "Woreda",
+        "helpAm": "ወረዳዎን ይጻፉ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "woreda"
+      },
+      {
+        "key": "address",
+        "labelAm": "አድራሻ",
+        "labelEn": "Address",
+        "helpAm": "ቤት ቁጥር / ሰፈር ያካትቱ።",
+        "type": "textarea",
+        "required": true,
+        "autofillFrom": "address"
+      },
+      {
+        "key": "yearsAtAddress",
+        "labelAm": "በዚህ አድራሻ የኖሩበት ጊዜ (ዓመት)",
+        "labelEn": "Years at address",
+        "helpAm": "በአሁኑ አድራሻ ምን ያህል ዓመት እንደኖሩ ይጻፉ።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "phone",
+        "labelAm": "ስልክ ቁጥር",
+        "labelEn": "Phone",
+        "helpAm": "ስልክ ቁጥርዎን ይጻፉ።",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "birth_certificate_request",
+    "titleAm": "የልደት ምስክር ጥያቄ ቅጽ",
+    "titleEn": "Birth Certificate Request",
+    "descriptionAm": "ለልጅ የልደት ምስክር ወረቀት ለመጠየቅ።",
+    "kebeleOfficeHintAm": "የሲቪል ሁኔታ ጠረጤዛ",
+    "priceBirr": 60,
+    "fields": [
+      {
+        "key": "childFullName",
+        "labelAm": "የልጅ ሙሉ ስም",
+        "labelEn": "Child full name",
+        "helpAm": "የልጁን ሙሉ ስም ይጻፉ።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "childDob",
+        "labelAm": "የልጅ የትውልድ ቀን",
+        "labelEn": "Child date of birth",
+        "helpAm": "የልጁን የትውልድ ቀን ይጻፉ።",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "fatherName",
+        "labelAm": "የአባት ስም",
+        "labelEn": "Father name",
+        "helpAm": "የአባት ሙሉ ስም።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "motherName",
+        "labelAm": "የእናት ስም",
+        "labelEn": "Mother name",
+        "helpAm": "የእናት ሙሉ ስም።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "placeOfBirth",
+        "labelAm": "የትውልድ ቦታ",
+        "labelEn": "Place of birth",
+        "helpAm": "ከተማ / ሆስፒታል / ኬቤሌ።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "kebele",
+        "labelAm": "ኬቤሌ",
+        "labelEn": "Kebele",
+        "helpAm": "ማመልከቻ የሚያስገቡበት ኬቤሌ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "kebele"
+      },
+      {
+        "key": "phone",
+        "labelAm": "ስልክ ቁጥር",
+        "labelEn": "Phone",
+        "helpAm": "ስልክ ቁጥር።",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "name_correction",
+    "titleAm": "ስም ማስተካከያ ቅጽ",
+    "titleEn": "Name Correction Form",
+    "descriptionAm": "በመታወቂያ ላይ የተሳሰተ ስም ለማስተካከል።",
+    "kebeleOfficeHintAm": "የመታወቂያ ጠረጤዛ",
+    "priceBirr": 80,
+    "fields": [
+      {
+        "key": "currentName",
+        "labelAm": "አሁን ያለ ስም",
+        "labelEn": "Current name on ID",
+        "helpAm": "በመታወቂያ ላይ አሁን የተጻፈው ስም።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "fullName"
+      },
+      {
+        "key": "correctName",
+        "labelAm": "ትክክለኛ ስም",
+        "labelEn": "Correct name",
+        "helpAm": "መታረም ያለበት ትክክለኛ ስም።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "idNumber",
+        "labelAm": "የመታወቂያ ቁጥር",
+        "labelEn": "ID number",
+        "helpAm": "መታወቂያ ቁጥር።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "idNumber"
+      },
+      {
+        "key": "reason",
+        "labelAm": "ምክንያት",
+        "labelEn": "Reason",
+        "helpAm": "ለምን ማስተካከል እንደሚፈልጉ በአጅሩ።",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "evidence",
+        "labelAm": "የማስረጃ አይነት",
+        "labelEn": "Evidence type",
+        "helpAm": "ለምሳሌ፦ የልደት መዝገብ / የትምህርት መዝገብ።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "phone",
+        "labelAm": "ስልክ ቁጥር",
+        "labelEn": "Phone",
+        "helpAm": "ስልክ ቁጥር።",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "marriage_certificate_request",
+    "titleAm": "የጋብቻ ምዝገባ ቅጽ",
+    "titleEn": "Marriage Registration Form",
+    "descriptionAm": "የጋብቻ ምስክር ወረቀት ለመጠየቅ።",
+    "kebeleOfficeHintAm": "የሲቪል ሁኔታ ጠረጤዛ",
+    "priceBirr": 70,
+    "fields": [
+      {
+        "key": "spouse1Name",
+        "labelAm": "የባለቤት ፩ ስም",
+        "labelEn": "Spouse 1 name",
+        "helpAm": "የመጀመሪያ ባለቤት ሙሉ ስም።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "fullName"
+      },
+      {
+        "key": "spouse2Name",
+        "labelAm": "የባለቤት ፪ ስም",
+        "labelEn": "Spouse 2 name",
+        "helpAm": "የሁለተኛ ባለቤት ሙሉ ስም።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "spouse1Id",
+        "labelAm": "የባለቤት ፩ መታወቂያ",
+        "labelEn": "Spouse 1 ID",
+        "helpAm": "መታወቂያ ቁጥር።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "idNumber"
+      },
+      {
+        "key": "spouse2Id",
+        "labelAm": "የባለቤት ፪ መታወቂያ",
+        "labelEn": "Spouse 2 ID",
+        "helpAm": "መታወቂያ ቁጥር።",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "marriageDate",
+        "labelAm": "የጋብቻ ቀን",
+        "labelEn": "Marriage date",
+        "helpAm": "ጋብቻው የተፈጸመበት ቀን።",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "kebele",
+        "labelAm": "ኬቤሌ",
+        "labelEn": "Kebele",
+        "helpAm": "ማመልከቻ ኬቤሌ።",
+        "type": "text",
+        "required": true,
+        "autofillFrom": "kebele"
+      },
+      {
+        "key": "phone",
+        "labelAm": "ስልክ ቁጥር",
+        "labelEn": "Phone",
+        "helpAm": "ስልክ ቁጥር።",
+        "type": "phone",
+        "required": true
+      }
+    ]
+  }
+]
